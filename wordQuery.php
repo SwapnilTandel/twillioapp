@@ -5,7 +5,7 @@
 $ch = curl_init();
 
 // set URL and other appropriate options
-curl_setopt($ch, CURLOPT_URL, "https://od-api-demo.oxforddictionaries.com:443/api/v1/entries/en/ace/definitions");
+curl_setopt($ch, CURLOPT_URL, "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/ace/definitions");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 
 $headers = array(

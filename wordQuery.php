@@ -17,10 +17,14 @@ $headers = array(
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 // grab URL and pass it to the browser
-curl_exec($ch);
+$json = curl_exec($ch);
 
 // close cURL resource, and free up system resources
 curl_close($ch);
+
+
+var_dump(json_decode($json));
+var_dump(json_decode($json, true));
 
 ?>
 

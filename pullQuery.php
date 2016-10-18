@@ -49,7 +49,7 @@ foreach ($array as $item){
 
     $tmp = $item["definitions"];
     $push .= $tmp[0];
-    $push .=".";
+    $push .=". ";
 }
 echo "<Response><Sms>".$push."</Sms></Response>";
     

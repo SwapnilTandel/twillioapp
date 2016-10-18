@@ -23,8 +23,8 @@ $json = curl_exec($ch);
 curl_close($ch);
 
 
-var_dump(json_decode($json));
-var_dump(json_decode($json, true));
+//var_dump(json_decode($json));
+//var_dump(json_decode($json, true));
 
 foreach ($json->results->entries->senses as $sense) {
    var_dump($sense->definitions);

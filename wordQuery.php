@@ -5,7 +5,7 @@
 $ch = curl_init();
 
 // set URL and other appropriate options
-curl_setopt($ch, CURLOPT_URL, "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/ace/definitions");
+curl_setopt($ch, CURLOPT_URL, "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/bring/definitions");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -18,6 +18,23 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 // grab URL and pass it to the browser
 $json = curl_exec($ch);
+$array = json_decode( $json, true );
+$array=$array['results'];
+$array=$array[0];
+$array=$array["lexicalEntries"];
+$array=$array[0];
+$array=$array["entries"];
+$array=$array[0];
+$array=$array["senses"];
+
+echo count($array);
+foreach ($array as $item){
+//    var_dump($item);
+    echo "------------------------------------";
+    $tmp = $item["definitions"];
+    echo $tmp[0];
+    echo "++++++++++++++++++++++++++++++++++++";
+}
 
 // close cURL resource, and free up system resources
 curl_close($ch);
@@ -26,12 +43,14 @@ curl_close($ch);
 //var_dump(json_decode($json));
 //var_dump(json_decode($json, true));
 
-foreach ($json->results->entries->senses as $sense) {
-   var_dump($sense->definitions);
-}
+
+
+
 
 ?>
 
 <b>Message Sent</b>
+
+
 
 

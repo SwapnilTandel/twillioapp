@@ -32,7 +32,6 @@ if($json === NULL){
     echo "<Response><Sms>Word Not Found. Sorry :(</Sms></Response>";
 }else{
 $array = json_decode( $json, true );
-var_dump($array);
 
 $array=$array['results'];
 $array=$array[0];

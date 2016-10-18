@@ -11,6 +11,6 @@ $result = preg_replace("/[^A-Za-z0-9]/u", " ", $body);
 $result = trim($result); 
 $result = strtolower($result); 
 
-echo "<Response><Sms>Thanks for the message. Configure your number's SMS URL to change this message.Reply HELP for help. Swapnil Tandel.</Sms></Response>";
+echo "<Response><Sms>Thanks for the message. Configure your number's SMS URL to change this message.Reply HELP for help. ".$result."</Sms></Response>";
 
 ?>

@@ -19,6 +19,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 // grab URL and pass it to the browser
 $json = curl_exec($ch);
 $array = json_decode( $json, true );
+var_dump($array);
+
 $array=$array['results'];
 $array=$array[0];
 $array=$array["lexicalEntries"];
@@ -30,10 +32,10 @@ $array=$array["senses"];
 echo count($array);
 foreach ($array as $item){
 //    var_dump($item);
-    echo "------------------------------------";
+    echo "<br>------------------------------------<br>";
     $tmp = $item["definitions"];
     echo $tmp[0];
-    echo "++++++++++++++++++++++++++++++++++++";
+    echo "<br>+++++++++++++++++++++++++++++++++++>";
 }
 
 // close cURL resource, and free up system resources

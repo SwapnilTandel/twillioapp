@@ -20,6 +20,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 $json = curl_exec($ch);
 
 if($json === NULL){
+    echo "<b>Not Found</b>";
+}else{
 $array = json_decode( $json, true );
 var_dump($array);
 
@@ -39,9 +41,7 @@ foreach ($array as $item){
     echo $tmp[0];
     echo "<br>+++++++++++++++++++++++++++++++++++>";
 }
-
-}else{
-    echo "<b>Not Found</b>";
+    
 }
 
 // close cURL resource, and free up system resources

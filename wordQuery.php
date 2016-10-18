@@ -5,7 +5,7 @@
 $ch = curl_init();
 
 // set URL and other appropriate options
-curl_setopt($ch, CURLOPT_URL, "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/adondan/definitions");
+curl_setopt($ch, CURLOPT_URL, "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/drive/definitions");
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
@@ -18,6 +18,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 // grab URL and pass it to the browser
 $json = curl_exec($ch);
+
+if($json === NULL){
 $array = json_decode( $json, true );
 var_dump($array);
 
@@ -36,6 +38,10 @@ foreach ($array as $item){
     $tmp = $item["definitions"];
     echo $tmp[0];
     echo "<br>+++++++++++++++++++++++++++++++++++>";
+}
+
+}else{
+    echo "<b>Not Found</b>";
 }
 
 // close cURL resource, and free up system resources

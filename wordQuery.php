@@ -7,6 +7,7 @@ $ch = curl_init();
 // set URL and other appropriate options
 curl_setopt($ch, CURLOPT_URL, "https://od-api.oxforddictionaries.com:443/api/v1/entries/en/ace/definitions");
 curl_setopt($ch, CURLOPT_HEADER, 0);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $headers = array(
     'Accept: application/json', 

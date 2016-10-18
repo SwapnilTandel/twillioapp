@@ -47,8 +47,9 @@ $array=$array["senses"];
 foreach ($array as $item){
 //    var_dump($item);
 
-    $tmp = $item["definitions"].".";
+    $tmp = $item["definitions"];
     $push .= $tmp[0];
+    $push .=".";
 }
 echo "<Response><Sms>".$push."</Sms></Response>";
     

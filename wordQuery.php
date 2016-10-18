@@ -26,6 +26,10 @@ curl_close($ch);
 var_dump(json_decode($json));
 var_dump(json_decode($json, true));
 
+foreach ($json->results->entries->senses as $sense) {
+   var_dump($sense->definitions);
+}
+
 ?>
 
 <b>Message Sent</b>
